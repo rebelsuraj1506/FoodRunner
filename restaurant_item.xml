@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="140dp"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:background="#ffffff"
+android:layout_margin="6dp"
+app:cardCornerRadius="4dp">
+<LinearLayout
+    android:id="@+id/llContent"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:orientation="horizontal"
+    android:background="#ffffff"
+    android:weightSum="6">
+
+    <!--The weight sum property is used to divide the layout into
+    different parts and then giving each layout a particular weight
+    gives it that amount of space on the screen-->
+
+
+    <!--Since each parent layout will have a specific weight, we need
+    not give any width to those layout-->
+
+    <ImageView
+        android:layout_weight="1.9"
+        android:id="@+id/imgRecipe"
+        android:layout_margin="10dp"
+        android:layout_width="7dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher"
+        android:padding="5dp"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:layout_weight="3.3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/nameRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name of the Restaurant"
+            android:layout_marginTop="15dp"
+            android:padding="8dp"
+            android:textSize="18sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/rupeeSymbol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rs"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/nameRecipe"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#357a38"/>
+    </RelativeLayout>
+
+
+    <!--Many times we see that texts have an image along with them to
+    their right or left. This is added with the help of the
+    drawableLeft (or drawableRight and so on) attribute-->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_weight="0.8">
+        <ImageView
+            android:id="@+id/luv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_favorite_unselected"
+            android:layout_marginEnd="16dp" />
+        <TextView
+            android:id="@+id/resRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffca28"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="4.5"
+            android:layout_below="@id/luv"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>
